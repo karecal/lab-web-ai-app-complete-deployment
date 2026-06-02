@@ -1,5 +1,9 @@
 import os
+import sys
 import pytest
+
+# Añadir el directorio backend al path para que pytest encuentre main.py
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 @pytest.fixture(autouse=True)
 def env_vars(monkeypatch):
